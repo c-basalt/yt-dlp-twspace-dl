@@ -4,7 +4,7 @@ See [installing yt-dlp plugins](https://github.com/yt-dlp/yt-dlp#installing-plug
 
 ## Feature and Usage
 
-Apart from login and browser cookie support and Twitter Space extractor in main `yt-dlp` branch, this plugin package additionally add these functionalities inspired by `twspace-dl`:
+Apart from login and browser cookie support and Twitter Space extractor in main `yt-dlp` branch, this plugin package additionally add these functionalities inspired by Ryu1845's `twspace-dl`:
 - Detect Twitter Space from up to 20 recent tweets in `USER_URL` like `https://x.com/xxx`
 - Use built-in filesystem cache of yt-dlp to automatically save dynamic urls and `info_dict`
 - Allows manually assign dynamic url or master url for ended spaces that do not have replays
