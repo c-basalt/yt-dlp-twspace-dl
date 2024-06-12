@@ -17,7 +17,7 @@ Install this plugin and use yt-dlp as usual
 yt-dlp --cookies-from firefox https://x.com/xxx --write-meta
 
 # To cache space info and download later
-yt-dlp --cookies curl-cookies.txt https://x.com/xxx --skip-download
+yt-dlp --cookies curl-cookies.txt https://x.com/xxx --skip-download --write-meta
 
 # To use dynamic url to download an ended space without replay enabled
 yt-dlp --username aaabbb@gmail.com --password ABcd5678 https://x.com/i/spaces/xxxxx --TwitterSpaces:dynamic_url "https://xxxx/xxx.../audio-space/dynamic_playlist.m3u8?type=live"
