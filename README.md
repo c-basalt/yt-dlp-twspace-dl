@@ -11,10 +11,10 @@ Apart from existing login and browser cookie support and `TwitterSpacesIE` extra
 - Use built-in filesystem cache of yt-dlp to automatically save dynamic urls and `info_dict` for later retrival of replays.
 - Allows manually assign dynamic url or master url for ended spaces that do not have replays
 
-Install this plugin and use yt-dlp as usual
+Install this plugin and use yt-dlp as usual. Refer to [Readme of `yt-dlp`](https://github.com/yt-dlp/yt-dlp#readme) for [filename formatting](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#output-template), use of [archive file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#video-selection) (to prevent repeated download), proxies, cookies, etc.
 ```bash
 # To download spaces within an account
-yt-dlp --cookies-from firefox https://x.com/xxx --write-meta
+yt-dlp --cookies-from firefox https://x.com/xxx --write-meta --download-archive downloaded-ids.txt
 
 # To cache space info and download later
 yt-dlp --cookies curl-cookies.txt https://x.com/xxx --skip-download --write-meta
