@@ -1,4 +1,4 @@
-This repository contains a plugin package for [yt-dlp](https://github.com/yt-dlp/yt-dlp#readme) to enhance Twitter Spaces download.
+This repository contains a proof-of-concept plugin package for [yt-dlp](https://github.com/yt-dlp/yt-dlp#readme) to enhance Twitter Spaces download. It should work in principle but I have not tested every part of it, and there could be gliches that need fixing before putting into use.
 
 See [installing yt-dlp plugins](https://github.com/yt-dlp/yt-dlp#installing-plugins) for methods this plugin package can be installed.
 
