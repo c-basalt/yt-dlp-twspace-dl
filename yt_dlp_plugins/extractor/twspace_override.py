@@ -5,7 +5,7 @@ from yt_dlp.utils import traverse_obj, int_or_none, ExtractorError
 
 class TwitterSpaceCacheIE(TwitterSpacesIE, plugin_name='twspace-cache'):
     def _get_cached_dynamic(self, space_id):
-        return traverse_obj(self.cache.load('twspace-cache', space_id), 'formats', ..., 'url', get_all=False)
+        return traverse_obj(self.cache.load('twspace-cache', f'space:{space_id}'), ('info_dict', 'formats', ..., 'url'), get_all=False)
 
     def _get_metainfo(self, space_id):
         metainfo = {}
@@ -41,6 +41,10 @@ class TwitterSpaceCacheIE(TwitterSpacesIE, plugin_name='twspace-cache'):
                 return
             master_url = re.sub(r"(?<=/audio-space/).*", "master_playlist.m3u8", f['url'])
         formats = self._extract_m3u8_formats(master_url, space_id, headers=headers)
+        for fmt in formats:
+            if '/transcode/' in fmt['url']:
+                fmt['url'] = fmt['url'].replace('/transcode/', '/non_transcode/')
+                fmt['url'] = re.sub(r'(/periscope[^/]+)/[^/]+', r'\1', fmt['url'])
         return {
             **self._get_metainfo(space_id),
             'id': space_id,
